@@ -1,7 +1,8 @@
 # gasoline-price-map
 
+## Description
+
 Plateforme communautaire qui répertorie les prix actuelles de l'essence selon votre position GPS.
----
 Community platform that lists current gas prices based on your GPS location.
 
 ## Optimizations
