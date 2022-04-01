@@ -14,7 +14,7 @@ Liste des versions : [Cliquer pour afficher](https://github.com/Loubal70/gasolin
 
 ## Optimizations
 
-- [ ] Laravel 8 Project
+- [ ] Convert to Laravel 8 Project
 - [ ] PWA Versionning
 - [ ] Connexion with Google, Facebook, GitHub
 - [ ] BDD Stations Essence
