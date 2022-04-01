@@ -35,19 +35,23 @@
         let zones = [
             { distance: 1, color: "#00B790"},
             { distance: 15, color: "#ffb846"},
+            { distance: 30, color: "#6B2737"},
         ];
 
         let content;
+        let zoneIndex = 0;
+        let map;
+        let popup;
+        let marker;
+        let gasoline_marker;
+        let circle;
+        
+        // Générer les bouttons de distanciations
         zones.forEach(function(element, index) {
             content = "<button index='"+ index +"' >" + element.distance + " km</button>";
             document.querySelector('#infos__distance').insertAdjacentHTML('beforeend', content);
         });
 
-        let zoneIndex = 0;
-        let map;
-        let popup;
-        let marker;
-        let circle;
 
         function addMarker(latlng, me = ""){
             marker = L.marker(latlng, {draggable: true}).addTo(map);
@@ -66,7 +70,8 @@
                 color: zones[zoneIndex].color,
                 fillColor: zones[zoneIndex].color,
                 fillOPacity: 0.15,
-                radius: zones[zoneIndex].distance * 1000, // Pour avoir une distance en mètres, je multiplie par 1000
+                // Pour avoir une distance en mètres, je multiplie par 1000
+                radius: zones[zoneIndex].distance * 1000,
             }).addTo(map);
         }
 
@@ -103,22 +108,28 @@
                 accessToken: 'pk.eyJ1IjoibG91YmFsNzAiLCJhIjoiY2wxZ3BkcjJuMHgxcjNkcnQ5dHZibW16bCJ9.BnfMu_LwhSHuyNrE699gMQ'
             }).addTo(map);
 
+            gasoline_marker = [
+                L.marker([51.5, -0.09]).addTo(map).bindPopup("<b>Prix Essence :</b> 15,90€ / L").openPopup(),
+                L.marker([52.5, -0.07]).addTo(map)
+            ];
+            
+
             
 
             // Gestion du click sur la map
-            map.on('click', (e) => {
-                if( !marker){
-                    addMarker(e.latlng);
-                    addCircle();
-                }
-                else{
-                    // Le marqueur est déjà affiché, on le centre vers la nouvelle position
-                    removeCircle();
-                    marker.setLatLng(e.latlng);
-                    addCircle();
+            // map.on('click', (e) => {
+            //     if( !marker){
+            //         addMarker(e.latlng);
+            //         addCircle();
+            //     }
+            //     else{
+            //         // Le marqueur est déjà affiché, on le centre vers la nouvelle position
+            //         removeCircle();
+            //         marker.setLatLng(e.latlng);
+            //         addCircle();
 
-                }
-            });
+            //     }
+            // });
 
             document.addEventListener('keydown', (e) => {
                 if(!marker){
@@ -127,7 +138,7 @@
                 switch(e.key){
                     case " ": // Touche appuyé est espace
                         removeCircle();
-                        zoneIndex ^= 1;
+                        zoneIndex ^= 2;
                         addCircle();
                         break;
                     case "Escape":
