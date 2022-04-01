@@ -1,4 +1,4 @@
-# Gasoline Price MAP  [![plugin version](https://img.shields.io/badge/version-v1.0.3-color.svg)](https://github.com/Loubal70/gasoline-price-map/releases/latest)
+# Gasoline Price MAP  [![plugin version](https://img.shields.io/badge/version-v1.0-color.svg)](https://github.com/Loubal70/gasoline-price-map/releases/latest)
 
 ## Description
 
