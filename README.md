@@ -14,6 +14,14 @@ Liste des versions : [Cliquer pour afficher](https://github.com/Loubal70/gasolin
 
 ## Optimizations
 
+- [ ] Laravel 8 Project
+- [ ] PWA Versionning
+- [ ] Connexion with Google, Facebook, GitHub
+- [ ] BDD Stations Essence
+- [ ] Système Points ajout / modification
+
+- [ ] Réaliser Maquette de l'application
+
 Le projet a pour but d'être une PWA (Progressive Web App) tournant grâce à Laravel. A terme, il sera obligatoire de se connecter avec son compte Google, Facebook, GitHub afin de pouvoir ajouter / Modifier le prix d'un carburant. 
 
 L'ajout / Modification d'un prix est valide si plusieurs membres du site, valide le prix, vous obtiendez alors des points / badges qui vous permettront d'avoir des récompenses...
