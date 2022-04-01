@@ -1,9 +1,16 @@
-# gasoline-price-map
+# Gasoline Price MAP  [![plugin version](https://img.shields.io/badge/version-v1.0.3-color.svg)](https://github.com/Loubal70/gasoline-price-map/releases/latest)
 
 ## Description
 
 Plateforme communautaire qui répertorie les prix actuelles de l'essence selon votre position GPS.
 Community platform that lists current gas prices based on your GPS location.
+
+## Versions
+
+**Dernière version stable :** 1.0 <br>
+**Dernière version :** 1.0<br>
+Liste des versions : [Cliquer pour afficher](https://github.com/Loubal70/gasoline-price-map/tags)
+
 
 ## Optimizations
 
@@ -21,6 +28,13 @@ The addition / modification of a price is valid if several members of the site v
 ## 🛠 Skills
 HTML, CSS, Javascript
 
+## Changelog
 
-## 🚀 About Me
-Soon...
+### [Unreleased]
+
+#### [1.0] - (01/04/2022)
+
+* Fix - Ajout du système de carte
+* Fix - Ajout géo-localisation de l'utilisateur
+* Fix - Ajout dynamique des distanciations
+
