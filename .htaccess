@@ -1,11 +1,3 @@
-#PHP 8.0 : 
 <FilesMatch \.php$>
-SetHandler application/x-httpd-php80
+SetHandler application/x-httpd-php52
 </FilesMatch>
-AddHandler application/x-httpd-php80 .php
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^$ public/index.php [L]
-    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
-</IfModule>
