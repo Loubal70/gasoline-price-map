@@ -41,10 +41,11 @@ class GoogleController extends Controller
             }else{
                 //user is not yet created, so create first
                 $newUser = User::create([
-                    'prenom' => $user->name,
-                    'email' => $user->email,
-                    'google_id'=> $user->id,
-                    'password' => encrypt('')
+                    'prenom'    => $user->name,
+                    'username'  => $user->name,
+                    'email'     => $user->email,
+                    'google_id' => $user->id,
+                    'password'  => encrypt('')
                 ]);
                 //every user needs a team for dashboard/jetstream to work.
                 //create a personal team for the user
