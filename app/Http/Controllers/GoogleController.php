@@ -41,7 +41,9 @@ class GoogleController extends Controller
             }else{
                 //user is not yet created, so create first
                 $newUser = User::create([
-                    'name' => $user->name,
+                    'prenom' => $user->prenom,
+                    'nom' => $user->nom,
+                    'username' => $user->username,
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => encrypt('')
@@ -50,7 +52,7 @@ class GoogleController extends Controller
                 //create a personal team for the user
                 $newTeam = Team::forceCreate([
                     'user_id' => $newUser->id,
-                    'name' => explode(' ', $user->name, 2)[0]."'s Team",
+                    'name' => explode(' ', $user->username, 2)[0]."'s Team",
                     'personal_team' => true,
                 ]);
                 // save the team and add the team to the user.
