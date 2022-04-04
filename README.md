@@ -1,4 +1,4 @@
-# Gasoline Price MAP  [![plugin version](https://img.shields.io/badge/version-v1.0-color.svg)](https://github.com/Loubal70/gasoline-price-map/releases/latest)
+# Gasoline Price MAP  [![plugin version](https://img.shields.io/badge/version-v1.1-color.svg)](https://github.com/Loubal70/gasoline-price-map/releases/latest)
 
 ## Description
 
@@ -8,7 +8,7 @@ Community platform that lists current gas prices based on your GPS location.
 ## Versions
 
 **Dernière version stable :** 1.0 <br>
-**Dernière version :** 1.0<br>
+**Dernière version :** 1.1<br>
 Liste des versions : [Cliquer pour afficher](https://github.com/Loubal70/gasoline-price-map/tags)
 
 
@@ -40,8 +40,12 @@ HTML, CSS, Javascript, Laravel, Php
 
 ### [Unreleased]
 
-#### [1.0] - (01/04/2022)
+#### [1.0] - (04/04/2022)
 
+* Fix - Add profil page (password, custom picture, others session, delete account)
+* Fix - Add compiler Sass
+* Fix - Add connexion with Google
+* Fix - Add Laravel project
 * Fix - Ajout du système de carte
 * Fix - Ajout géo-localisation de l'utilisateur
 * Fix - Ajout dynamique des distanciations
