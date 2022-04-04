@@ -1,4 +1,5 @@
 <x-app-layout>
+
  <div id="mapid" class="center-block" style="width: 100%; height: 100vh;"></div>
  <script>
 
@@ -46,7 +47,7 @@ function removeCircle(){
 
 function InitMap(){
     mymap = L.map('mapid').setView([50.437616, 2.809546], 10);
-    //  var icon = L.icon({iconUrl: "{{asset('/images/vendor/leaflet/dist/marker-icon.png') }}"}); 
+     var icon = L.icon({iconUrl: "{{asset('/images/vendor/leaflet/dist/marker-icon.png') }}"}); 
     //  icon.options.shadowSize = [0,0];
 
     // Est-ce-que la localisation est possible avec le navigateur ?
@@ -64,8 +65,12 @@ function InitMap(){
         });
     }
 
+    L.Marker.prototype.options.icon = L.icon({
+        iconUrl:  "{{asset('/images/vendor/leaflet/dist/marker-icon.png') }}",
+        iconAnchor:   [12, -2]
+    });
 
-     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox/streets-v11',
@@ -73,11 +78,11 @@ function InitMap(){
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoibG91YmFsNzAiLCJhIjoiY2wxZ3BkcjJuMHgxcjNkcnQ5dHZibW16bCJ9.BnfMu_LwhSHuyNrE699gMQ'
     }).addTo(mymap);
+    gasoline_marker = [
+        L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Prix Essence :</b> 15,90€ / L").openPopup(),
+        L.marker([52.5, -0.07]).addTo(mymap).bindPopup("<b>Prix Essssssence :</b> 15,90€ / L").openPopup()
+    ];
 
-    // gasoline_marker = [
-    //     L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Prix Essence :</b> 15,90€ / L").openPopup(),
-    //     // L.marker([52.5, -0.07]).addTo(mymap)
-    // ];
 }
 
 InitMap();
