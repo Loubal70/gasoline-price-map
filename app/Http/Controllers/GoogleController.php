@@ -68,4 +68,9 @@ class GoogleController extends Controller
             dd($e->getMessage());
         }
     }
+
+    public function showMap()
+{
+    return view('showmap');
+}
 }
