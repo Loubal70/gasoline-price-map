@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/*
+*   CUSTOM COLORS
+*/
+
+$red: rgb(217, 37, 27);
+$red_fonce: rgb(191, 33, 24);
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #141414;
+}
+
+#map{
+   height: 100%;
+}
+
+.infos{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0px 15px 20px 0px rgba(20,20,20, .13);
+
+}
+
+.infos h1{
+    font-size: 18px;
+    color: rgb(67, 67, 67);
+    margin: 0 0 1rem 0;
+}
+
+#infos__distance{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.infos button{
+    background: $red;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: background .2s;
+}
+
+.infos button:hover{
+    background: $red_fonce;
+}
+
+/* PopUP leaflet */
+.leaflet-container{
+    font: 14px/1.5 "Poppins", Arial, Helvetica, sans-serif
+}
+
+.border-custom{
+    border-color: $red;
+}
+.text-indigo-700, .text-indigo-500{
+    color: $red;
+}
+.bottom-custom{
+    bottom: 3.5rem;
+}
