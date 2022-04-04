@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Tableau de bord') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -43,9 +43,9 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    {{-- <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
-                                    </x-jet-dropdown-link> --}}
+                                    </x-jet-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                         <x-jet-dropdown-link href="{{ route('teams.create') }}">
@@ -138,7 +138,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Tableau de bord') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -148,6 +148,7 @@
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="shrink-0 mr-3">
                         <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->username }}" />
+                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->username }}</div>
                     </div>
                 @endif
 
@@ -160,7 +161,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Profil') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -175,7 +176,7 @@
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Déconnexion') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
