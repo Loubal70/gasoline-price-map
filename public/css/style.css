@@ -644,6 +644,10 @@ body {
   height: 100%;
 }
 
+.leaflet-shadow-pane {
+  display: none;
+}
+
 .infos {
   position: absolute;
   top: 2rem;

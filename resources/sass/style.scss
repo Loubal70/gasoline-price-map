@@ -23,6 +23,9 @@ body{
 #map{
    height: 100%;
 }
+.leaflet-shadow-pane{
+    display: none;
+}
 
 .infos{
     position: absolute;

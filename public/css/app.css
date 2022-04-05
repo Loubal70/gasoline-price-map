@@ -1045,11 +1045,11 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.-mt-px {
-  margin-top: -1px;
-}
 .mr-1 {
   margin-right: 0.25rem;
+}
+.-mt-px {
+  margin-top: -1px;
 }
 .block {
   display: block;

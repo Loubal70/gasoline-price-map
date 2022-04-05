@@ -30,5 +30,3 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
-Route::get('/map', [GoogleController::class, 'showmap'])->name('courts.showmap');

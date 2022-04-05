@@ -69,8 +69,4 @@ class GoogleController extends Controller
         }
     }
 
-    public function showMap()
-{
-    return view('showmap');
-}
 }
