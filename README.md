@@ -40,6 +40,12 @@ HTML, CSS, Javascript, Laravel, Php
 
 ### [Unreleased]
 
+#### [1.0.1] - (05/04/2022)
+
+* Fix - Added distancing if user position is enabled
+* Fix - Remove pointer'shadow of leafletjs
+* Fix - Add npm leafletjs dependance (map librairy)
+
 #### [1.0] - (04/04/2022)
 
 * Fix - Add profil page (password, custom picture, others session, delete account)
