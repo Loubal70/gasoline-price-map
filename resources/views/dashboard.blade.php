@@ -14,11 +14,11 @@
             color: "#00B790"
         },
         {
-            distance: 15,
+            distance: 5,
             color: "#ffb846"
         },
         {
-            distance: 30,
+            distance: 15,
             color: "#6B2737"
         },
     ];
@@ -66,29 +66,49 @@
         //  icon.options.shadowSize = [0,0];
 
         // Est-ce-que la localisation est possible avec le navigateur ?
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const latlng = [
-                    position.coords.latitude,
-                    position.coords.longitude
-                ];
-                mymap.panTo(latlng);
-                addMarker(latlng);
-                addCircle();
-                // Show your emplacement
-                const popup = marker.bindPopup("<b>Votre position</b><br>Déplacer moi ci-besoin")
-                .openPopup();
-                
-            });            
-        }
+        navigator.permissions && navigator.permissions.query({name: 'geolocation'})
+        .then(function(PermissionStatus) {
+            if (PermissionStatus.state == 'granted') {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const latlng = [
+                        position.coords.latitude,
+                        position.coords.longitude
+                    ];
+                    mymap.panTo(latlng);
+                    addMarker(latlng);
+                    addCircle();
+                    // Show your emplacement
+                    const popup = marker.bindPopup("<b>Votre position</b><br>Déplacer moi ci-besoin")
+                    .openPopup();
+                    
+                });  
 
-        if(navigator.geolocation){
-            // Générer les bouttons de distanciations si la position de l'utilisateur est définie
-            zones.forEach(function (element, index) {
-                content = "<button index='" + index + "' >" + element.distance + " km</button>";
-                document.querySelector('#infos__distance').insertAdjacentHTML('beforeend', content);
-            });
-        }
+                // Générer les bouttons de distanciations si la position de l'utilisateur est définie
+                zones.forEach(function (element, index) {
+                    content = "<button index='" + index + "' >" + element.distance + " km</button>";
+                    document.querySelector('#infos__distance').insertAdjacentHTML('beforeend', content);
+                });
+
+                content = document.querySelectorAll('#infos__distance button');
+                content.forEach(element => {
+                    element.addEventListener('click', (e) => {
+                        removeCircle();
+                        zoneIndex = e.target.attributes.index.value;
+                        addCircle();
+                    });
+                });
+            } 
+            else if (PermissionStatus.state == 'prompt') {
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000); 
+            } 
+            else {
+                // denied
+            }
+        })  
+
+        
 
         // L.Marker.prototype.options.icon = L.icon({
         //     iconUrl:  "{{asset('/images/vendor/leaflet/dist/marker-icon.png') }}",
@@ -139,14 +159,7 @@
             }
         })
 
-        content = document.querySelectorAll('#infos__distance button');
-        content.forEach(element => {
-            element.addEventListener('click', (e) => {
-                removeCircle();
-                zoneIndex = e.target.attributes.index.value;
-                addCircle();
-            });
-        });
+        
 
     }
 
