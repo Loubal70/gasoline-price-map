@@ -1,4 +1,5 @@
 <x-app-layout>
+    @livewire('navigation-menu')
 
 <div class="infos">
     <h1>Où est mon carburant le moins cher ?</h1>
@@ -6,7 +7,7 @@
     </div>
 </div>
 
-<div id="mapid" class="center-block" style="width: 100%; height: 100vh;"></div>
+<div id="mapid" class="center-block" style="width: 100%; height: 92vh;"></div>
     
 <script>
     let zones = [{
@@ -25,7 +26,7 @@
     let content;
     let zoneIndex = 0;
     let mymap;
-    let popup;
+    let popup = L.popup();
     let marker;
     let gasoline_marker;
     let circle;
@@ -34,6 +35,9 @@
         marker = L.marker(latlng, {
             draggable: true
         }).addTo(mymap);
+
+        
+
         marker.on('dragstart', removeCircle); // Remove circle on drag start
         marker.on('dragend', addCircle); // Add circle on drag end
     }
@@ -128,20 +132,6 @@
             L.marker([52.5, -0.07]).addTo(mymap).bindPopup("<b>Prix Essssssence :</b> 15,90€ / L").openPopup()
         ];
 
-        // Gestion du click sur la map
-        // map.on('click', (e) => {
-        //     if( !marker){
-        //         addMarker(e.latlng);
-        //         addCircle();
-        //     }
-        //     else{
-        //         // Le marqueur est déjà affiché, on le centre vers la nouvelle position
-        //         removeCircle();
-        //         marker.setLatLng(e.latlng);
-        //         addCircle();
-        //     }
-        // });
-
         document.addEventListener('keydown', (e) => {
             if (!marker) {
                 return;
@@ -159,7 +149,31 @@
             }
         })
 
-        
+        // Gestion du click sur la map
+        mymap.on('click', (e) => {
+
+            popup
+                .setLatLng(e.latlng)
+                .setContent("<span class='d-block mt-3 text-center'>Souhaitez-vous ajouter une nouvelle station essence ?</span> <a href='{!! route('pointer.store') !!}/create?lat=" + e.latlng.lat.toString().substring(0, 15) + "&lont=" + e.latlng.lng.toString().substring(0, 15) + "' class='d-block btn btn-danger text-white mt-3'>Ajouter</a>")
+                .openOn(mymap);
+
+            if( !marker){
+                addMarker(e.latlng);
+                addCircle();
+
+                setInterval(() => {
+                    removeCircle();
+                    removeMarker();
+                    popup.remove();
+                }, 10000);
+            }
+            else{
+                // Le marqueur est déjà affiché, on le centre vers la nouvelle position
+                removeCircle();
+                marker.setLatLng(e.latlng);
+                addCircle();
+            }
+        });
 
     }
 

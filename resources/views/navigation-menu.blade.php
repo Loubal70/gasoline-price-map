@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="fixed bottom-0 inset-x-0 bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="fixed z-1000 bottom-0 inset-x-0 bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Tableau de bord') }}
+                        {{ __('Carte') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -74,7 +74,8 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                <button class="flex items-center gap-3 text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                    {{ Auth::user()->username }}    
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->username }}" />
                                 </button>
                             @else
@@ -148,7 +149,7 @@
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="shrink-0 mr-3">
                         <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->username }}" />
-                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->username }}</div>
+                        {{-- <div class="font-medium text-base text-gray-800">{{ Auth::user()->username }}</div> --}}
                     </div>
                 @endif
 
