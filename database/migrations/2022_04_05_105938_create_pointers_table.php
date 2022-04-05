@@ -23,8 +23,8 @@ class CreatePointersTable extends Migration
             $table->string('Gazoil')->nullable();
 
             $table->string('address')->nullable();
-            $table->string('latitude', 15)->nullable();
-            $table->string('longitude', 15)->nullable();
+            $table->string('latitude', 50);
+            $table->string('longitude', 50);
             $table->unsignedInteger('creator_id');
             $table->timestamps();
 

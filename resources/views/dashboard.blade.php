@@ -81,6 +81,7 @@
                     mymap.panTo(latlng);
                     addMarker(latlng);
                     addCircle();
+
                     // Show your emplacement
                     const popup = marker.bindPopup("<b>Votre position</b><br>Déplacer moi ci-besoin")
                     .openPopup();
@@ -127,6 +128,7 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoibG91YmFsNzAiLCJhIjoiY2wxZ3BkcjJuMHgxcjNkcnQ5dHZibW16bCJ9.BnfMu_LwhSHuyNrE699gMQ'
         }).addTo(mymap);
+        
         gasoline_marker = [
             L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Prix Essence :</b> 15,90€ / L").openPopup(),
             L.marker([52.5, -0.07]).addTo(mymap).bindPopup("<b>Prix Essssssence :</b> 15,90€ / L").openPopup()

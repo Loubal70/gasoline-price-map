@@ -21,28 +21,16 @@ body{
     font-size: 14px;
     color: #141414;
 }
+@import 'custom-components';
 
-.btn-primary, .btn-primary:active, .btn-primary:focus{
-    background-color: $red;
-    border-color: $red;
-
-    &:hover{
-        background-color: $red_fonce;
-        border-color: $red_fonce;
-    }
+main{
+    padding-bottom: 10vh;
 }
 
-.btn-primary:focus, .btn-primary:active{
-    box-shadow: 0 0 0 0.25rem rgba(217, 37, 27, .5);
-}
-
-.z-1000{
-    z-index: 1000;
-}
 #map{
    height: 100%;
 }
-.leaflet-shadow-pane{
+.leaflet-shadow-pane, .leaflet-control-attribution{
     display: none;
 }
 
@@ -100,4 +88,31 @@ body{
 }
 .bottom-custom{
     bottom: 3.5rem;
+}
+
+/*
+*   CARD Essence
+*/
+.cards__essence{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px 0;
+
+    .card__essence{
+        display: flex;
+        gap: 15px;
+        border: 1px solid #eeee;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0px 20px rgb(0 0 0 / 4%);
+    
+        &__title{
+            display: block;
+            font-size: .9rem;
+            font-weight: bold;
+            margin-bottom: .5rem;
+        }
+    }
 }

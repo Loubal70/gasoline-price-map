@@ -43,15 +43,27 @@ class PointerController extends Controller
     {
         $data = $request->validate([
             'name'          => 'required|string|max:255',
-            'address'       => 'required|string|max:255',
+            'address'       => 'nullable|string|max:255',
             'latitude'      => 'required|numeric',
             'longitude'     => 'required|numeric',
+
+            'price_sp95'    => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_e85'     => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_sp98'    => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_gazole'  => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+
         ]);
         $pointer = new Pointer();
         $pointer->name          = $request->input('name');
         $pointer->address       = $request->input('address');
         $pointer->latitude      = $request->input('latitude');
         $pointer->longitude     = $request->input('longitude');
+
+        $pointer->sp95    = $request->input('price_sp95');
+        $pointer->e85     = $request->input('price_e85');
+        $pointer->sp98    = $request->input('price_sp98');
+        $pointer->Gazoil  = $request->input('price_gazole');
+
         $pointer->creator_id    = Auth::id();
 
         $pointer->save();

@@ -33,3 +33,7 @@ Route::middleware([
 });
 
 Route::resource('/pointer', PointerController::class);
+
+Route::fallback(function () {
+    return view('404');
+});

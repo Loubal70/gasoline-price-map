@@ -11932,19 +11932,35 @@ body {
   border-color: rgb(191, 33, 24);
 }
 
-.btn-primary:focus, .btn-primary:active {
-  box-shadow: 0 0 0 0.25rem rgba(217, 37, 27, 0.5);
+.form-control:focus {
+  border-color: rgb(217, 37, 27);
+}
+
+.btn-primary:focus, .btn-primary:active, .form-control:focus {
+  box-shadow: 0 0 0 0.15rem rgba(217, 37, 27, 0.5);
 }
 
 .z-1000 {
   z-index: 1000;
 }
 
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.form-control.is-invalid {
+  padding-right: 0;
+}
+
+main {
+  padding-bottom: 10vh;
+}
+
 #map {
   height: 100%;
 }
 
-.leaflet-shadow-pane {
+.leaflet-shadow-pane, .leaflet-control-attribution {
   display: none;
 }
 
@@ -12002,4 +12018,29 @@ body {
 
 .bottom-custom {
   bottom: 3.5rem;
+}
+
+/*
+*   CARD Essence
+*/
+.cards__essence {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px 0;
+}
+.cards__essence .card__essence {
+  display: flex;
+  gap: 15px;
+  border: 1px solid rgba(238, 238, 238, 0.9333333333);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.04);
+}
+.cards__essence .card__essence__title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
