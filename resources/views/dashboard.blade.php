@@ -141,6 +141,7 @@
         })
         content = document.querySelectorAll('#infos__distance button');
         content.forEach(element => {
+            console.log(element);
             element.addEventListener('click', (e) => {
                 removeCircle();
                 zoneIndex = e.target.attributes.index.value;
