@@ -5,6 +5,22 @@
 Plateforme communautaire qui répertorie les prix actuelles de l'essence selon votre position GPS.
 Community platform that lists current gas prices based on your GPS location.
 
+## Installation Steps
+
+Follow this instructions to install the project:
+
+1. Clone this repo.
+    ```bash
+    $ git clone https://github.com/Loubal70/gasoline-price-map
+    ```
+2. Go to branch laravel
+3. `$ composer install`
+5. `$ php artisan key:generate`
+6. Set **database config** on `.env` file
+7. `$ php artisan migrate`
+8. `$ php artisan serve`
+10. Open `https://localhost:8000` with browser.
+
 ## Versions
 
 **Dernière version stable :** 1.0 <br>
