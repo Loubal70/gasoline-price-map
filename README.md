@@ -42,6 +42,8 @@ HTML, CSS, Javascript, Laravel, Php
 
 #### [1.0.1] - (05/04/2022)
 
+* Fix - Click in Map disappears after 10 seconds
+* Fix - Click in Map = Prompt Add pointer, redirect create form with lat et lnt
 * Fix - Responsive navbar
 * Fix - Dashboard (map view) - Add navbar
 * Fix - Add PointerController : Create Custom Pointer
