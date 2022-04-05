@@ -79,16 +79,15 @@
                 const popup = marker.bindPopup("<b>Votre position</b><br>Déplacer moi ci-besoin")
                 .openPopup();
                 
-                
-                // Générer les bouttons de distanciations si la position de l'utilisateur est définie
-                zones.forEach(function (element, index) {
-                    content = "<button index='" + index + "' >" + element.distance + " km</button>";
-                    document.querySelector('#infos__distance').insertAdjacentHTML('beforeend', content);
-                });
+            });            
+        }
+
+        if(navigator.geolocation){
+            // Générer les bouttons de distanciations si la position de l'utilisateur est définie
+            zones.forEach(function (element, index) {
+                content = "<button index='" + index + "' >" + element.distance + " km</button>";
+                document.querySelector('#infos__distance').insertAdjacentHTML('beforeend', content);
             });
-
-
-            
         }
 
         // L.Marker.prototype.options.icon = L.icon({
@@ -139,9 +138,9 @@
                     break;
             }
         })
+
         content = document.querySelectorAll('#infos__distance button');
         content.forEach(element => {
-            console.log(element);
             element.addEventListener('click', (e) => {
                 removeCircle();
                 zoneIndex = e.target.attributes.index.value;
