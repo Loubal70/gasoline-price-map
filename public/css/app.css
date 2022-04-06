@@ -1002,11 +1002,11 @@ select {
 .z-50 {
   z-index: 50;
 }
-.z-auto {
-  z-index: auto;
-}
 .col-span-6 {
   grid-column: span 6 / span 6;
+}
+.float-right {
+  float: right;
 }
 .mx-auto {
   margin-left: auto;
@@ -1015,10 +1015,6 @@ select {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1097,6 +1093,9 @@ select {
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
 }
 .block {
   display: block;
@@ -1445,10 +1444,6 @@ select {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1826,10 +1821,6 @@ select {
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-.hover\:bg-blue-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 .hover\:bg-red-700:hover {
   --tw-bg-opacity: 1;

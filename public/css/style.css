@@ -11923,6 +11923,10 @@ body {
   color: #141414;
 }
 
+a:hover {
+  color: rgb(191, 33, 24);
+}
+
 .btn-primary, .btn-primary:active, .btn-primary:focus {
   background-color: rgb(217, 37, 27);
   border-color: rgb(217, 37, 27);
@@ -11950,6 +11954,31 @@ body {
 
 .form-control.is-invalid {
   padding-right: 0;
+}
+
+/*
+*   Leafleat
+*/
+.leaflet-popup-content {
+  font-family: "Nunito";
+}
+.leaflet-popup-content .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.leaflet-popup-content .creator {
+  color: grey;
+  font-size: 0.8rem;
+}
+.leaflet-popup-content .price__title {
+  display: block;
+  color: rgb(110, 117, 121);
+  margin: 1rem 0;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 main {
@@ -12029,6 +12058,12 @@ main {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 15px 0;
+}
+.cards__essence.space-between {
+  justify-content: space-between;
+}
+.cards__essence.space-between .card__essence {
+  flex-basis: 45%;
 }
 .cards__essence .card__essence {
   display: flex;

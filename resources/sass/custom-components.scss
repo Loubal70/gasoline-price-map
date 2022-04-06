@@ -1,3 +1,7 @@
+a:hover{
+    color: $red_fonce;
+}
+
 .btn-primary, .btn-primary:active, .btn-primary:focus{
     background-color: $red;
     border-color: $red;
@@ -26,4 +30,31 @@
 
 .form-control.is-invalid{
     padding-right: 0;
+}
+
+/*
+*   Leafleat
+*/ 
+.leaflet-popup-content{
+    font-family: 'Nunito';
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .creator{
+        color: grey;
+        font-size: .8rem;
+    }
+    .price{
+        &__title{
+            display: block;
+            color: rgb(110, 117, 121);
+            margin: 1rem 0;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
 }

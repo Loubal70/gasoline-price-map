@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\Auth;
 class PointerController extends Controller
 {
     /**
+     * Display a dashboard page with a list of pointers.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function dashboard(){
+        $pointers = Pointer::all();
+
+        return view('dashboard', ['pointers' => $pointers]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -99,9 +111,23 @@ class PointerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pointer $pointer)
     {
-        //
+        $data = $request->validate([
+            'name'      => 'required|max:60',
+            'address'   => 'nullable|max:255',
+            'latitude'  => 'nullable|numeric',
+            'longitude' => 'nullable|numeric',
+
+            'price_sp95'    => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_e85'     => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_sp98'    => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+            'price_gazole'  => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
+        ]);
+
+        $pointer->update($data);
+
+        return redirect()->route('dashboard', $pointer);
     }
 
     /**

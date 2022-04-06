@@ -19,32 +19,34 @@
                                     <a href="{{ route('pointer.index') }}" class="btn btn-link">{{ __('Réinitialiser') }}</a>
                                 </form>
                             </div>
-                            <table class="table table-sm table-responsive-sm">
+                            <table class="table table-sm table-responsive-sm mb-0">
                                 <thead>
                                     <tr>
                                         <th class="text-center py-3">{{ __('Nom') }}</th>
-                                        <th class="text-center py-3">{{ __('Adresse') }}</th>
-                                        <th class="text-center py-3">{{ __('Latitude') }}</th>
-                                        <th class="text-center py-3">{{ __('Longitude') }}</th>
-                                        <th class="text-center py-3">{{ __('Action') }}</th>
+                                        <th class="text-center py-3">{{ __('SP95') }}</th>
+                                        <th class="text-center py-3">{{ __('E85') }}</th>
+                                        <th class="text-center py-3">{{ __('SP98') }}</th>
+                                        <th class="text-center py-3">{{ __('Gasoil') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{-- {{ dd($pointers); }} --}}
                                     @foreach($pointers as $key => $outlet)
                                     <tr>
-                                        <td class="text-center">{{ $pointers->firstItem() + $key }}</td>
-                                        <td>{!! $outlet->name_link !!}</td>
-                                        <td>{{ $outlet->address }}</td>
-                                        <td>{{ $outlet->latitude }}</td>
-                                        <td>{{ $outlet->longitude }}</td>
-                                        <td class="text-center">
+                                        <td class="text-center py-2">{{ $outlet->name }}</td>
+                                        <td class="text-center py-2">{!! $outlet->SP95 ?? "<i>Non défini</i>" !!}</td>
+                                        <td class="text-center py-2">{!! $outlet->E85 ?? "<i>Non défini</i>" !!}</td>
+                                        <td class="text-center py-2">{!! $outlet->SP98 ?? "<i>Non défini</i>" !!}</td>
+                                        <td class="text-center py-2">{!! $outlet->Gazoil ?? "<i>Non défini</i>" !!}</td>
+
+                                        {{-- <td class="text-center">
                                             <a href="{{ route('pointers.show', $outlet) }}" id="show-outlet-{{ $outlet->id }}">{{ __('app.show') }}</a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            <div class="card-body">{{ $pointers->appends(Request::except('page'))->render() }}</div>
+                            {{-- <div class="card-body">{{ $pointers->appends(Request::except('page'))->render() }}</div> --}}
                         </div>
                     </div>
                 </div>

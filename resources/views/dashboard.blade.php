@@ -28,6 +28,7 @@
     let mymap;
     let popup = L.popup();
     let marker;
+    let gasoline_bdd = @json($pointers);
     let gasoline_marker;
     let circle;
 
@@ -113,8 +114,6 @@
             }
         })  
 
-        
-
         // L.Marker.prototype.options.icon = L.icon({
         //     iconUrl:  "{{asset('/images/vendor/leaflet/dist/marker-icon.png') }}",
         //     iconAnchor:   [12, -2]
@@ -128,14 +127,20 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoibG91YmFsNzAiLCJhIjoiY2wxZ3BkcjJuMHgxcjNkcnQ5dHZibW16bCJ9.BnfMu_LwhSHuyNrE699gMQ'
         }).addTo(mymap);
-        
-        gasoline_marker = [
-            L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Prix Essence :</b> 15,90€ / L").openPopup(),
-            L.marker([52.5, -0.07]).addTo(mymap).bindPopup("<b>Prix Essssssence :</b> 15,90€ / L").openPopup()
-        ];
+
+        console.log(gasoline_bdd);
+
+        let customOptions = {
+            'minWidth': '300',
+            'className' : 'custom'
+        };
+    
+        @foreach ($pointers as $item)
+            L.marker([{{ $item->coordinate }}]).addTo(mymap).bindPopup("@include("pointer.popup", ["item" => $item])", customOptions),
+        @endforeach
 
         document.addEventListener('keydown', (e) => {
-            if (!marker) {
+            if (!marker) {  
                 return;
             }
             switch (e.key) {
