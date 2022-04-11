@@ -1,0 +1,60 @@
+a:hover{
+    color: $red_fonce;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:focus{
+    background-color: $red;
+    border-color: $red;
+
+    &:hover{
+        background-color: $red_fonce;
+        border-color: $red_fonce;
+    }
+}
+
+.form-control:focus{
+    border-color: $red;
+}
+
+.btn-primary:focus, .btn-primary:active, .form-control:focus{
+    box-shadow: 0 0 0 0.15rem rgba(217, 37, 27, .5);
+}
+
+.z-1000{
+    z-index: 1000;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+
+.form-control.is-invalid{
+    padding-right: 0;
+}
+
+/*
+*   Leafleat
+*/ 
+.leaflet-popup-content{
+    font-family: 'Nunito';
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .creator{
+        color: grey;
+        font-size: .8rem;
+    }
+    .price{
+        &__title{
+            display: block;
+            color: rgb(110, 117, 121);
+            margin: 1rem 0;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+}
