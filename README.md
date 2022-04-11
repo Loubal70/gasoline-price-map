@@ -81,7 +81,7 @@ HTML, CSS, Javascript, Laravel, Php
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel, please send an e-mail to Louis BOULANGER via [louis.boulanger.work@gmail.com](mailto:louis.boulanger.work@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
