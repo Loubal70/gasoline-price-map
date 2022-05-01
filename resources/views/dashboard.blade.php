@@ -8,7 +8,23 @@
 </div>
 
 <div id="mapid" class="center-block" style="width: 100%; height: 92vh;"></div>
-    
+
+@if (\Session::has('message'))
+<div class="toast custom active">
+    <div class="toast-content">
+        <i class="fas fa-solid fa-check check"></i>
+
+        <div class="message">
+            <span class="text text-1">Information : </span>
+            <span class="text text-2">{!! session('message') !!}</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-xmark close"></i>
+
+    <div class="progress active"></div>
+</div>
+@endif
+
 <script>
     let zones = [{
             distance: 1,
@@ -185,6 +201,38 @@
     }
 
     InitMap();
+
+</script>
+
+<script>
+    // Notification TOAST
+    const toast = document.querySelector(".toast") !== null;
+    if(toast){
+        const toast = document.querySelector(".toast"),
+        closeIcon = document.querySelector(".close"),
+        progress = document.querySelector(".progress");
+
+        let timer1, timer2;
+
+        timer1 = setTimeout(() => {
+            toast.classList.remove("active");
+        }, 5000); //1s = 1000 milliseconds
+
+        timer2 = setTimeout(() => {
+            progress.classList.remove("active");
+        }, 5300);
+
+        closeIcon.addEventListener("click", () => {
+            toast.classList.remove("active");
+
+            setTimeout(() => {
+                progress.classList.remove("active");
+            }, 300);
+
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+        });
+    }
 
 </script>
 

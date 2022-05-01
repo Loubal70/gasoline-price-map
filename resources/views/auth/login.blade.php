@@ -48,8 +48,8 @@
             </div>
         </form>
 
-        <a href="{{ url('auth/google') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2 btn-google">
-            <strong>Login With Google</strong>
-            </a>
+        <a href="{{ url('auth/google') }}" class="btn-google">
+            <img src="{{ url('/images/google.svg') }}" alt="">
+        </a>
     </x-jet-authentication-card>
 </x-guest-layout>

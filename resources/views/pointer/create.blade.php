@@ -53,7 +53,7 @@
                                                         <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
                                                         <div class="card__essence__content">
                                                             <label for="price_sp95" class="card__essence__title">SP95</label>
-                                                            <input id="price_sp95" type="text" class="form-control{{ $errors->has('price_sp95') ? ' is-invalid' : '' }}" name="price_sp95" value="{{ old('price_sp95') }}" required>
+                                                            <input id="price_sp95" type="text" class="form-control{{ $errors->has('price_sp95') ? ' is-invalid' : '' }}" name="price_sp95" value="{{ old('price_sp95') }}">
                                                             {!! $errors->first('price_sp95', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                         </div>
                                                     </div>
@@ -62,7 +62,7 @@
                                                         <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
                                                         <div class="card__essence__content">
                                                             <label for="price_e85" class="card__essence__title">E85</label>
-                                                            <input id="price_e85" type="text" class="form-control{{ $errors->has('price_e85') ? ' is-invalid' : '' }}" name="price_e85" value="{{ old('price_e85') }}" required>
+                                                            <input id="price_e85" type="text" class="form-control{{ $errors->has('price_e85') ? ' is-invalid' : '' }}" name="price_e85" value="{{ old('price_e85') }}">
                                                             {!! $errors->first('price_e85', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                         </div>
                                                     </div>
@@ -71,7 +71,7 @@
                                                         <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
                                                         <div class="card__essence__content">
                                                             <label for="price_sp98" class="card__essence__title">SP98</label>
-                                                            <input id="price_sp98" type="text" class="form-control{{ $errors->has('price_sp98') ? ' is-invalid' : '' }}" name="price_sp98" value="{{ old('price_sp98') }}" required>
+                                                            <input id="price_sp98" type="text" class="form-control{{ $errors->has('price_sp98') ? ' is-invalid' : '' }}" name="price_sp98" value="{{ old('price_sp98') }}">
                                                             {!! $errors->first('price_sp98', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                         </div>
                                                     </div>
@@ -80,7 +80,7 @@
                                                         <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
                                                         <div class="card__essence__content">
                                                             <label for="price_gazole" class="card__essence__title">Gazole</label>
-                                                            <input id="price_gazole" type="text" class="form-control{{ $errors->has('price_gazole') ? ' is-invalid' : '' }}" name="price_gazole" value="{{ old('price_gazole') }}" required>
+                                                            <input id="price_gazole" type="text" class="form-control{{ $errors->has('price_gazole') ? ' is-invalid' : '' }}" name="price_gazole" value="{{ old('price_gazole') }}">
                                                             {!! $errors->first('price_gazole', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                         </div>
                                                     </div>

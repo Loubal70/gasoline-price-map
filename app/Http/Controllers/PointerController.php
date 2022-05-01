@@ -125,9 +125,18 @@ class PointerController extends Controller
             'price_gazole'  => 'nullable|regex:/^\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})$/|max:10',
         ]);
 
+        $pointer->name          = $request->input('name');
+        $pointer->address       = $request->input('address');
+        $pointer->latitude      = $request->input('latitude');
+        $pointer->longitude     = $request->input('longitude');
+
+        $pointer->sp95    = $request->input('price_sp95');
+        $pointer->e85     = $request->input('price_e85');
+        $pointer->sp98    = $request->input('price_sp98');
+        $pointer->Gazoil  = $request->input('price_gazole');
         $pointer->update($data);
 
-        return redirect()->route('dashboard', $pointer);
+        return redirect()->route('dashboard', $pointer)->with('message', 'Votre modification pour <b>'. htmlspecialchars(mb_strimwidth($pointer->name, 0, 30, "...")) .'</b> a bien été prise en compte');
     }
 
     /**

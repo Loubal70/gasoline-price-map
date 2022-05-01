@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="address" class="control-label mb-2">{{ __('Adresse') }}</label>
-                                        <input type="text" id="address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" placeholder="{{ old('address', $pointer->address) }}" />
+                                        <input type="text" id="address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" placeholder="{{ old('address', $pointer->address) }}" value="{{ old('address', $pointer->address) }}" />
                                         {!! $errors->first('address', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                     </div>
                                     <div class="row">
@@ -38,6 +38,58 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    {{-- Essence --}}
+
+                                    <div class="row mt-3">
+                                        {{-- SP95 --}}
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div for="price" class="control-label mb-2 font-weight-bold">{{ __('Prix') }}</div>
+                                                <div class="cards__essence">
+
+                                                    <div class="card__essence">
+                                                        <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
+                                                        <div class="card__essence__content">
+                                                            <label for="price_sp95" class="card__essence__title">SP95</label>
+                                                            <input id="price_sp95" type="text" class="form-control{{ $errors->has('price_sp95') ? ' is-invalid' : '' }}" name="price_sp95" value="{{ old('SP95', $pointer->SP95) }}" placeholder="{{ old('SP95', $pointer->SP95) ? '' : 'Non définie' }}">
+                                                            {!! $errors->first('price_sp95', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__essence">
+                                                        <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
+                                                        <div class="card__essence__content">
+                                                            <label for="price_e85" class="card__essence__title">E85</label>
+                                                            <input id="price_e85" type="text" class="form-control{{ $errors->has('price_e85') ? ' is-invalid' : '' }}" name="price_e85" value="{{ old('E85', $pointer->E85) }}" placeholder="{{ old('E85', $pointer->E85) ? '' : 'Non définie' }}">
+                                                            {!! $errors->first('price_e85', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card__essence">
+                                                        <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
+                                                        <div class="card__essence__content">
+                                                            <label for="price_sp98" class="card__essence__title">SP98</label>
+                                                            <input id="price_sp98" type="text" class="form-control{{ $errors->has('price_sp98') ? ' is-invalid' : '' }}" name="price_sp98" value="{{ old('SP98', $pointer->SP98) }}" placeholder="{{ old('SP98', $pointer->SP98) ? '' : 'Non définie' }}">
+                                                            {!! $errors->first('price_sp98', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="card__essence">
+                                                        <img src="{{url('/images/station.svg')}}" width="30" alt="Picto Station Essence">
+                                                        <div class="card__essence__content">
+                                                            <label for="price_gazole" class="card__essence__title">Gazole</label>
+                                                            <input id="price_gazole" type="text" class="form-control{{ $errors->has('price_gazole') ? ' is-invalid' : '' }}" name="price_gazole" value="{{ old('Gazoil', $pointer->Gazoil) }}" placeholder="{{ old('Gazoil', $pointer->Gazoil) ? '' : 'Non définie' }}">
+                                                            {!! $errors->first('price_gazole', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+
                                 </div>
                                 <div class="card-footer text-right py-3">
                                     <a href="{{ route('dashboard', $pointer) }}" class="btn btn-link text-decoration-none">{{ __('Annuler') }}</a>

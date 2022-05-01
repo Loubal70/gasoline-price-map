@@ -2,14 +2,17 @@ a:hover{
     color: $red_fonce;
 }
 
-.btn-primary, .btn-primary:active, .btn-primary:focus{
-    background-color: $red;
-    border-color: $red;
-
-    &:hover{
-        background-color: $red_fonce;
-        border-color: $red_fonce;
+.btn{
+    &-primary, &-primary:active, &-primary:focus{
+        background-color: $red;
+        border-color: $red;
+    
+        &:hover{
+            background-color: $red_fonce;
+            border-color: $red_fonce;
+        }
     }
+
 }
 
 .form-control:focus{

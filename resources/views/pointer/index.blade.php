@@ -30,7 +30,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- {{ dd($pointers); }} --}}
                                     @foreach($pointers as $key => $outlet)
                                     <tr>
                                         <td class="text-center py-2">{{ $outlet->name }}</td>

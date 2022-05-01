@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ mix('css/style.css') }}">
 
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/4d8e7503ba.js" crossorigin="anonymous"></script>
+
         @livewireStyles
 
         <!-- Scripts -->
