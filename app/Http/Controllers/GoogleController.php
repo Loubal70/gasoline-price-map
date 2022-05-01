@@ -51,7 +51,7 @@ class GoogleController extends Controller
                 //create a personal team for the user
                 $newTeam = Team::forceCreate([
                     'user_id' => $newUser->id,
-                    'prenom' => explode(' ', $user->name, 2)[0]."'s Team",
+                    'name' => explode(' ', $user->name, 2)[0]."'s Team",
                     'personal_team' => true,
                 ]);
                 // save the team and add the team to the user.
