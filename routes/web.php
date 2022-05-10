@@ -35,3 +35,9 @@ Route::resource('/pointer', PointerController::class)->middleware('auth:sanctum'
 Route::fallback(function () {
     return view('404');
 });
+
+Route::middleware(['auth', 'role:admin'])->group(function(){
+    Route::get('/admin', function () {
+        return view('admin.index');
+    });
+});
