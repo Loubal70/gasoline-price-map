@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PointerController;
@@ -36,8 +37,17 @@ Route::fallback(function () {
     return view('404');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function(){
-    Route::get('/admin', function () {
-        return view('admin.index');
+Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
+    Route::get('/admin/{id}', function ($id) {
+        // return view('admin.index');
+        $user = User::find($id);
+ 
+        $user->roles()->attach('1');
+    });
+});
+
+Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
+    Route::get('/test', function () {
+        return('test');
     });
 });

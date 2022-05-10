@@ -1,4 +1,5 @@
 <x-app-layout>
+    {{-- {{ dd(Auth::user()->roles()) }} --}}
     @livewire('navigation-menu')
 
 <div class="infos">
