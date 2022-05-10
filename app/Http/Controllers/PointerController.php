@@ -79,7 +79,7 @@ class PointerController extends Controller
         $pointer->creator_id    = Auth::id();
 
         $pointer->save();
-        return redirect()->route('dashboard', $pointer);
+        return redirect()->route('dashboard', $pointer)->with('message', '<b>'. htmlspecialchars(mb_strimwidth($pointer->name, 0, 30, "...")) .'</b> a bien été ajouté !');
     }
 
     /**
