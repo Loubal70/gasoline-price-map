@@ -49,7 +49,7 @@
         </form>
 
         <a href="{{ url('auth/google') }}" class="btn-google">
-            <img src="{{ url('/images/google.svg') }}" alt="">
+            <img src="{{ url('/images/google.svg') }}" alt="Logo google">
         </a>
     </x-jet-authentication-card>
 </x-guest-layout>
