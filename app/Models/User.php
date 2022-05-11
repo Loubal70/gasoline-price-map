@@ -65,7 +65,13 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function roles(){
+    public function roles()
+    {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function hasRole($role)
+    {
+        return User::where('name', $role)->exists();
     }
 }

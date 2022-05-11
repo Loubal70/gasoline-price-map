@@ -147,6 +147,10 @@ class PointerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pointer = Pointer::find($id);
+        $pointer->delete();
+
+        return redirect()->route('dashboard')->with('message', 'Votre station essence a bien été supprimée !');
+
     }
 }

@@ -38,16 +38,13 @@ Route::fallback(function () {
 });
 
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
-    Route::get('/admin/{id}', function ($id) {
-        // return view('admin.index');
+    Route::get('/addadmin/{id}', function ($id) {
         $user = User::find($id);
- 
         $user->roles()->attach('1');
     });
-});
 
-Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
-    Route::get('/test', function () {
-        return('test');
+    Route::get('/removeadmin/{id}', function ($id) {
+        $user = User::find($id);
+        $user->roles()->attach('1');
     });
 });

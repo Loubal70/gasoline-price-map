@@ -54,6 +54,16 @@ a:hover{
         justify-content: space-between;
         font-weight: 700;
         font-size: 1.2rem;
+        > div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a:nth-child(2) img{
+                width: 20px;
+            }
+
+        }
     }
     .creator{
         color: grey;

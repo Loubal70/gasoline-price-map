@@ -1,6 +1,5 @@
 <x-app-layout>
-    {{-- {{ dd(Auth::user()->roles()) }} --}}
-    @livewire('navigation-menu')
+@livewire('navigation-menu')
 
 <div class="infos">
     <h1>Où est mon carburant le moins cher ?</h1>
@@ -153,7 +152,7 @@
         };
     
         @foreach ($pointers as $item)
-            L.marker([{{ $item->coordinate }}]).addTo(mymap).bindPopup("@include("pointer.popup", ["item" => $item])", customOptions),
+            L.marker([{{ $item->coordinate }}]).addTo(mymap).bindPopup(`@include("pointer.popup", ["item" => $item])`, customOptions),
         @endforeach
 
         document.addEventListener('keydown', (e) => {
