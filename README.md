@@ -17,6 +17,7 @@ Liste des versions : [Cliquer pour afficher](https://github.com/Loubal70/gasolin
 - [x] Convert to Laravel 8 Project
 - [ ] PWA Versionning
 - [x] Connexion with Google
+- [x] Message Error personnalisée register
 - [ ] BDD Stations Essence
 - [ ] Système Points ajout / modification
 

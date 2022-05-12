@@ -96,3 +96,5 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
         
     });
 });
+
+Route::get('/testmail', [PointerController::class, "welcome"]);

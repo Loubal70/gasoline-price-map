@@ -43,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
             'email.email'           =>  'Votre email doit être une adresse email valide',
             'email.max'             =>  'Votre email ne peut pas dépasser 255 caractères',
             'email.unique'          =>  'Votre email est déjà utilisé',
-            
+
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -55,6 +55,7 @@ class CreateNewUser implements CreatesNewUsers
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
                 $this->createTeam($user);
+                // dd($user['email']);
                 Mail::to($user['email'])->send(new WelcomeMarkdownMail());
             });
         });

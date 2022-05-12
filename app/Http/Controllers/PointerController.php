@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use App\Models\Pointer;
 use Illuminate\Http\Request;
+use App\Mail\WelcomeMarkdownMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PointerController extends Controller
 {
@@ -152,5 +155,11 @@ class PointerController extends Controller
 
         return redirect()->route('dashboard')->with('message', 'Votre station essence a bien été supprimée !');
 
+    }
+
+    public function welcome()
+    {
+        // Mail::to('louisbal70@gmail.com')->send(new TestMail());
+        Mail::to('louis.boulanger.work@gmail.com')->send(new WelcomeMarkdownMail());
     }
 }
