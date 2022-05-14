@@ -24,7 +24,7 @@
 
         <!-- PWA  -->
         <meta name="theme-color" content="#dc3545"/>
-        <link rel="apple-touch-icon" href="{{ asset('images/save--marker-icon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('images/gas-station.png') }}">
         <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     </head>
