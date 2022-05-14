@@ -58,21 +58,21 @@
 
         <script src="{{ asset('/sw.js') }}"></script>
         <script>
-            // if (!navigator.serviceWorker.controller) {
-            //     navigator.serviceWorker.register("/sw.js").then(function (reg) {
-            //         console.log("Service worker has been registered for scope: " + reg.scope);
-            //     });
-            // }
-            if ('serviceWorker' in navigator) {
-            // Do a one-off check to see if a service worker's in control.
-            if (navigator.serviceWorker.controller) {
-                console.log(`This page is currently controlled by: ${navigator.serviceWorker.controller}`);
-            } else {
+            if (!navigator.serviceWorker.controller) {
                 navigator.serviceWorker.register("/sw.js").then(function (reg) {
                     console.log("Service worker has been registered for scope: " + reg.scope);
                 });
             }
-            } else {
-            console.log('Service workers are not supported.');
-            }
+            // if ('serviceWorker' in navigator) {
+            // // Do a one-off check to see if a service worker's in control.
+            // if (navigator.serviceWorker.controller) {
+            //     console.log(`This page is currently controlled by: ${navigator.serviceWorker.controller}`);
+            // } else {
+            //     navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            //         console.log("Service worker has been registered for scope: " + reg.scope);
+            //     });
+            // }
+            // } else {
+            // console.log('Service workers are not supported.');
+            // }
         </script>
