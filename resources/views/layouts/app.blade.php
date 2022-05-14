@@ -21,6 +21,12 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}"></script>
+
+        <!-- PWA  -->
+        <meta name="theme-color" content="#dc3545"/>
+        <link rel="apple-touch-icon" href="{{ asset('images/save--marker-icon.png') }}">
+        <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -49,3 +55,24 @@
 
     </body>
 </html>
+
+        <script src="{{ asset('/sw.js') }}"></script>
+        <script>
+            // if (!navigator.serviceWorker.controller) {
+            //     navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            //         console.log("Service worker has been registered for scope: " + reg.scope);
+            //     });
+            // }
+            if ('serviceWorker' in navigator) {
+            // Do a one-off check to see if a service worker's in control.
+            if (navigator.serviceWorker.controller) {
+                console.log(`This page is currently controlled by: ${navigator.serviceWorker.controller}`);
+            } else {
+                navigator.serviceWorker.register("/sw.js").then(function (reg) {
+                    console.log("Service worker has been registered for scope: " + reg.scope);
+                });
+            }
+            } else {
+            console.log('Service workers are not supported.');
+            }
+        </script>

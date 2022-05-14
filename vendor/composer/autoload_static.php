@@ -135,6 +135,7 @@ class ComposerStaticInitf7ee24e742fc4bc8a09f39293fbe8982
             'Laravel\\Sail\\' => 13,
             'Laravel\\Jetstream\\' => 18,
             'Laravel\\Fortify\\' => 16,
+            'Ladumor\\LaravelPwa\\' => 19,
         ),
         'J' => 
         array (
@@ -454,6 +455,10 @@ class ComposerStaticInitf7ee24e742fc4bc8a09f39293fbe8982
         array (
             0 => __DIR__ . '/..' . '/laravel/fortify/src',
         ),
+        'Ladumor\\LaravelPwa\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ladumor/laravel-pwa/src',
+        ),
         'Jenssegers\\Agent\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/agent/src',
@@ -634,6 +639,8 @@ class ComposerStaticInitf7ee24e742fc4bc8a09f39293fbe8982
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\TestMail' => __DIR__ . '/../..' . '/app/Mail/TestMail.php',
+        'App\\Mail\\WelcomeMarkdownMail' => __DIR__ . '/../..' . '/app/Mail/WelcomeMarkdownMail.php',
         'App\\Models\\Membership' => __DIR__ . '/../..' . '/app/Models/Membership.php',
         'App\\Models\\Pointer' => __DIR__ . '/../..' . '/app/Models/Pointer.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
@@ -3167,6 +3174,9 @@ class ComposerStaticInitf7ee24e742fc4bc8a09f39293fbe8982
         'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
         'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Ladumor\\LaravelPwa\\LaravelPwa' => __DIR__ . '/..' . '/ladumor/laravel-pwa/src/LaravelPwa.php',
+        'Ladumor\\LaravelPwa\\PWAServiceProvider' => __DIR__ . '/..' . '/ladumor/laravel-pwa/src/PWAServiceProvider.php',
+        'Ladumor\\LaravelPwa\\commands\\PublishPWA' => __DIR__ . '/..' . '/ladumor/laravel-pwa/src/commands/PublishPWA.php',
         'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
         'Laravel\\Fortify\\Actions\\CompletePasswordReset' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/CompletePasswordReset.php',
         'Laravel\\Fortify\\Actions\\ConfirmPassword' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/ConfirmPassword.php',

@@ -30,7 +30,7 @@
             <img src='{{url('/images/station.svg')}}' width='15' alt='Picto Station Essence'> 
             <div class='card__essence__content'>
                 <label for='price_gazole'class='card__essence__title'>Gazole</label>
-                {{ $item->Gazoil }}
+                {{ $item->Gazoil }}€
             </div>
         </div>
     @endif 
@@ -39,7 +39,7 @@
             <img src='{{url('/images/station.svg')}}' width='15' alt='Picto Station Essence'>
             <div class='card__essence__content'>
                 <label class='card__essence__title'>E85</label>
-                {{ $item->E85 }}
+                {{ $item->E85 }}€
             </div>
         </div>
     @endif 
@@ -48,7 +48,7 @@
             <img src='{{url('/images/station.svg')}}' width='15' alt='Picto Station Essence'>
             <div class='card__essence__content'>
                 <label class='card__essence__title'>SP95</label>
-                {{ $item->SP95 }}
+                {{ $item->SP95 }}€
             </div>
         </div>
     @endif 
@@ -57,7 +57,7 @@
             <img src='{{url('/images/station.svg')}}' width='15' alt='Picto Station Essence'> 
             <div class='card__essence__content'>
                 <label class='card__essence__title'>SP98</label>
-                {{ $item->SP98 }}
+                {{ $item->SP98 }}€
             </div>
         </div>
     @endif

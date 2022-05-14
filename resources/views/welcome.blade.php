@@ -50,11 +50,17 @@
 
             .welcome_section h1 {
                 font-weight: 700;
-                font-size: 4rem;
+                font-size: 2rem;
                 letter-spacing: -.1rem;
                 margin-bottom: 1rem;
                 text-align: left;
                 font-family: "Roboto", sans-serif;
+            }
+
+            @media (min-width: 768px) {
+                .welcome_section h1 {
+                    font-size: 4rem;
+                }
             }
 
             .welcome_section h1>span {
@@ -260,7 +266,7 @@
     <body class="antialiased">
         <div class="relative min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden fixed top-0 right-0 px-6 py-4" style="display:block;">
                     @auth
                         <a href="{{ url('/dashboard') }}" class=" text-gray-700 dark:text-gray-500">
                             Tableau de bord

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5a2495e76cd6f4b16858738d27de56e2b352c7e3',
+        'reference' => '5f7d87e7861530dafe15df0d57e924dc6edfd253',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -457,6 +457,15 @@
                 0 => '*',
             ),
         ),
+        'ladumor/laravel-pwa' => array(
+            'pretty_version' => 'v0.0.3',
+            'version' => '0.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ladumor/laravel-pwa',
+            'aliases' => array(),
+            'reference' => '8256db4b88554e69d8c0691ea8880efe29845411',
+            'dev_requirement' => false,
+        ),
         'laravel/fortify' => array(
             'pretty_version' => 'v1.12.0',
             'version' => '1.12.0.0',
@@ -490,7 +499,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5a2495e76cd6f4b16858738d27de56e2b352c7e3',
+            'reference' => '5f7d87e7861530dafe15df0d57e924dc6edfd253',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
