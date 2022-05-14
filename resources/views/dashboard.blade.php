@@ -121,13 +121,28 @@
                 });
             } 
             else if (PermissionStatus.state == 'prompt') {
-                setTimeout(() => {
-                    window.location.reload();
-                }, 5000); 
+                // setTimeout(() => {
+                //     window.location.reload();
+                // }, 5000); 
+                
             } 
             else {
                 // denied
             }
+            navigator.geolocation.getCurrentPosition((position) => {
+                    const latlng = [
+                        position.coords.latitude,
+                        position.coords.longitude
+                    ];
+                    mymap.panTo(latlng);
+                    addMarker(latlng);
+                    addCircle();
+
+                    // Show your emplacement
+                    const popup = marker.bindPopup("<b>Votre position</b><br>Déplacer moi ci-besoin")
+                    .openPopup();
+                    
+                });  
         })  
 
         // L.Marker.prototype.options.icon = L.icon({
