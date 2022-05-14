@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bolo1678/louis-boulanger.fr/essence.louis-boulanger.fr/
+    - /bin/cp * $DEPLOYPATH
