@@ -21,6 +21,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/leaflet.js') }}"></script>
 
         <!-- PWA  -->
         <meta name="theme-color" content="#dc3545"/>
